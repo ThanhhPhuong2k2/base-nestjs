@@ -5,12 +5,11 @@ import { ProductsModule } from './modules/products/products.module';
 import { StoreModule } from './store/store.module';
 import { ConfigModule } from './config/config.module';
 import { LoggerModule } from './logger/logger.module';
-import { HttpLoggerMiddleware } from './common/middleware/http-logger.middleware';
+import { HttpLoggerMiddleware } from './shared/middleware/http-logger.middleware';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
-import { HttpExceptionFilter } from './common/filters';
-import { ResponseInterceptor, TimeOutInterceptor } from './common/interceptors';
-
+import { HttpExceptionFilter } from './shared/filters';
+import { ResponseInterceptor, TimeOutInterceptor } from './shared/interceptors';
 @Module({
   imports: [
     ConfigModule,

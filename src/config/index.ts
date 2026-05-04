@@ -21,6 +21,12 @@ export const configs: IConfig = {
     maxSize: Number(process.env.LOG_SIZE) || 10,
     maxRotate: process.env.LOG_ROTATE || '',
   },
+  redisSettings: {
+    host: process.env.REDIS_HOST || '',
+    port: Number(process.env.REDIS_PORT) || 0,
+    db: Number(process.env.REDIS_DB) || 0,
+    password: process.env.REDIS_PASSWORD,
+  },
 };
 
 @Injectable()
@@ -41,5 +47,9 @@ export class ConfigService {
 
   getHttp() {
     return this.config.httpServer;
+  }
+
+  getRedis() {
+    return this.config.redisSettings;
   }
 }

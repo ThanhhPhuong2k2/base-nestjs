@@ -18,8 +18,16 @@ export interface IHttpServer {
   timeout: number;
 }
 
+export interface IRedisSettings {
+  host: string;
+  port: number;
+  password?: string;
+  db?: number;
+}
+
 export interface IConfig {
   httpServer: IHttpServer;
   prismaSettings: IPrismaSettings;
   loggerSettings: ILoggerSettings;
+  redisSettings: IRedisSettings;
 }
